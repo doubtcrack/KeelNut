@@ -92,24 +92,37 @@ const AddProduct = ({ getProductInfo, data }) => {
     }
     const productFilter = []
 
-    if (productInfo.type === 'book') {
-        productFilter.push('scifi', 'business', 'mystery', 'cookbooks', 'accessories')
+    if (productInfo.type === 'Fasteners') {
+        productFilter.push('Screws', 'Bolts', 'Nuts', 'Washers', 'Rivets')
     }
-    else if (productInfo.type === 'cloths') {
-        productFilter.push('men', 'women')
+    else if (productInfo.type === 'Connectors') {
+        productFilter.push('Bolts & Nuts', 'Pins & clips', 'Anchors')
     }
-    else if (productInfo.type === 'shoe') {
-        productFilter.push('running', 'football', 'formal', 'casual')
+    else if (productInfo.type === 'Brackets and Supports') {
+        productFilter.push('Angle Brackets', 'Shelf Brackets', 'Wall Mounts', 'Beam Hangers', 'Post Bases')
     }
-    else if (productInfo.type === 'electronics') {
-        productFilter.push('monitor', 'ssd', 'hdd')
+    else if (productInfo.type === 'Hinges and Latches') {
+        productFilter.push('Door Hinges', 'Gate Hinges', 'Cabinet Hinges', 'Latches')
     }
+    else if (productInfo.type === 'Hooks and Fastening') {
+        productFilter.push('Screw Hooks', 'Eye Bolts', 'Snap Hooks', 'Clevis Hooks', 'S-Hooks')
+    }
+    else if (productInfo.type === 'Braces and Plates') {
+        productFilter.push('Mending Plates', 'Corner Braces', 'T-Plates', 'Flat Braces', 'Gusset Plates')
+    }
+    else if (productInfo.type === 'Adhesive and Sealants') {
+        productFilter.push('Epoxy', 'Silicone Sealant', 'Construction Adhesive', 'Threadlocker', 'Sealant Tape')
+    }
+    else if (productInfo.type === 'Clamps and Vises') {
+        productFilter.push('C-Clamps', 'Pipe Clamps', 'Bar Clamps', 'Bench Vises', 'Toggle Clamps')
+    }
+
     else {
         productFilter.push('all')
 
     }
-    const typeDropdown = ['book', 'cloths', 'shoe', 'electronics'];
-    const shoeBrand = ['adidas', 'hushpuppies', 'nike', 'reebok', 'vans']
+    const typeDropdown = ['Fasteners', 'Connectors', 'Brackets and Supports', 'Hinges and Latches', 'Hooks and Fastening', 'Braces and Plates', 'Adhesive and Sealants', 'Clamps and Vises'];
+    const adhesiveBrand = ['3M', 'Loctite', 'Gorilla Glue', 'Dow', 'Henkel(Titebond)', 'Bostik', 'Sika', 'Permatex', 'Devcon', 'Master Bond', 'GE Silicone', 'DAP Products', 'Sachco', 'Tremco', 'Polyseamseal', 'OSI Sealants', 'Henkel(Loctite)', 'BASF(MasterSeal)']
 
 
     return (
@@ -167,27 +180,27 @@ const AddProduct = ({ getProductInfo, data }) => {
                                         </Select>
                                     </FormControl>
                                 </Grid>
-                                {
+                                {/* {
                                     productInfo.type === 'book' &&
                                     <Grid item xs={12} >
                                         <TextField label="Author" name='author' value={productInfo.author} onChange={handleOnchange} variant="outlined" required fullWidth />
                                     </Grid>
-                                }
+                                } */}
                                 {
-                                    productInfo.type === 'shoe' &&
+                                    productInfo.type === 'Adhesive and Sealants' &&
                                     <Grid item xs={12} >
                                         <FormControl fullWidth>
-                                            <InputLabel id="demo-simple-select-label">Shoe Brand</InputLabel>
+                                            <InputLabel id="demo-simple-select-label">Adhesive Brand</InputLabel>
                                             <Select
                                                 labelId="demo-simple-select-label"
                                                 id="demo-simple-select"
                                                 value={productInfo.brand}
-                                                label="Shoe Brand"
+                                                label="Adhesive Brand"
                                                 name='brand'
                                                 required
                                                 onChange={handleOnchange}
                                             >
-                                                {shoeBrand.map(item =>
+                                                {adhesiveBrand.map(item =>
                                                     <MenuItem value={item} key={item}>{item}</MenuItem>
                                                 )}
                                             </Select>

@@ -17,24 +17,36 @@ const ProductChart = ({ products, review, cart, wishlist, paymentData }) => {
 
     const productData = [
         {
-            name: "Cloths",
-            Quantity: products.filter(prod => prod.type === "cloths").length
+            name: "Fasteners",
+            Quantity: products.filter(prod => prod.type === "Fasteners").length
         },
         {
-            name: "Shoes",
-            Quantity: products.filter(prod => prod.type === "shoe").length
+            name: "Connectors",
+            Quantity: products.filter(prod => prod.type === "Connectors").length
         },
         {
-            name: "Electronics",
-            Quantity: products.filter(prod => prod.type === "electronics").length
+            name: "Brackets",
+            Quantity: products.filter(prod => prod.type === "Brackets").length
         },
         {
-            name: "Books",
-            Quantity: products.filter(prod => prod.type === "book").length
+            name: "Hinges",
+            Quantity: products.filter(prod => prod.type === "Hinges").length
         },
         {
-            name: "Jewelry",
-            Quantity: products.filter(prod => prod.type === "jewelry").length
+            name: "Hooks",
+            Quantity: products.filter(prod => prod.type === "Hooks").length
+        },
+        {
+            name: "Braces",
+            Quantity: products.filter(prod => prod.type === "Braces").length
+        },
+        {
+            name: "Adhesive",
+            Quantity: products.filter(prod => prod.type === "Adhesive").length
+        },
+        {
+            name: "Clamps",
+            Quantity: products.filter(prod => prod.type === "Clamps").length
         },
     ];
     const reviewData = [
@@ -62,47 +74,71 @@ const ProductChart = ({ products, review, cart, wishlist, paymentData }) => {
 
     const cartData = [
         {
-            name: "Cloths",
-            "Quantity in cart": cart.filter(prod => prod.productId.type === "cloths").length
+            name: "Fasteners",
+            "Quantity in cart": cart.filter(prod => prod.productId.type === "Fasteners").length
         },
         {
-            name: "Shoes",
-            "Quantity in cart": cart.filter(prod => prod.productId.type === "shoe").length
+            name: "Connectors",
+            "Quantity in cart": cart.filter(prod => prod.productId.type === "Connectors").length
         },
         {
-            name: "Electronics",
-            "Quantity in cart": cart.filter(prod => prod.productId.type === "electronics").length
+            name: "Brackets",
+            "Quantity in cart": cart.filter(prod => prod.productId.type === "Brackets").length
         },
         {
-            name: "Books",
-            "Quantity in cart": cart.filter(prod => prod.productId.type === "book").length
+            name: "Hinges",
+            "Quantity in cart": cart.filter(prod => prod.productId.type === "Hinges").length
         },
         {
-            name: "Jewelry",
-            "Quantity in cart": cart.filter(prod => prod.productId.type === "jewelry").length
+            name: "Hooks",
+            "Quantity in cart": cart.filter(prod => prod.productId.type === "Hooks").length
+        },
+        {
+            name: "Braces",
+            "Quantity in cart": cart.filter(prod => prod.productId.type === "Braces").length
+        },
+        {
+            name: "Adhesive",
+            "Quantity in cart": cart.filter(prod => prod.productId.type === "Adhesive").length
+        },
+        {
+            name: "Clamps",
+            "Quantity in cart": cart.filter(prod => prod.productId.type === "Clamps").length
         },
     ];
 
     const wishlistData = [
         {
-            name: "Cloths",
-            "Quantity in wishlist": wishlist.filter(prod => prod.productId.type === "cloths").length
+            name: "Fasteners",
+            "Quantity in wishlist": wishlist.filter(prod => prod.productId.type === "Fasteners").length
         },
         {
-            name: "Shoes",
-            "Quantity in wishlist": wishlist.filter(prod => prod.productId.type === "shoe").length
+            name: "Connectors",
+            "Quantity in wishlist": wishlist.filter(prod => prod.productId.type === "Connectors").length
         },
         {
-            name: "Electronics",
-            "Quantity in wishlist": wishlist.filter(prod => prod.productId.type === "electronics").length
+            name: "Brackets",
+            "Quantity in wishlist": wishlist.filter(prod => prod.productId.type === "Brackets").length
         },
         {
-            name: "Books",
-            "Quantity in wishlist": wishlist.filter(prod => prod.productId.type === "book").length
+            name: "Hinges",
+            "Quantity in wishlist": wishlist.filter(prod => prod.productId.type === "Hinges").length
         },
         {
-            name: "Jewelry",
-            "Quantity in wishlist": wishlist.filter(prod => prod.productId.type === "jewelry").length
+            name: "Hooks",
+            "Quantity in wishlist": wishlist.filter(prod => prod.productId.type === "Hooks").length
+        },
+        {
+            name: "Braces",
+            "Quantity in wishlist": wishlist.filter(prod => prod.productId.type === "Braces").length
+        },
+        {
+            name: "Adhesive",
+            "Quantity in wishlist": wishlist.filter(prod => prod.productId.type === "Adhesive").length
+        },
+        {
+            name: "Clamps",
+            "Quantity in wishlist": wishlist.filter(prod => prod.productId.type === "Clamps").length
         },
     ];
 
@@ -169,16 +205,22 @@ const ProductChart = ({ products, review, cart, wishlist, paymentData }) => {
                 </div>
                 <h3 style={{ textAlign: "center", margin: "15px 0", color: "#17becf" }}>Users Cart</h3>
                 <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 15, flexWrap: "wrap" }}>
-                    <h3 style={{ color: '#00C49F' }}>Shoes </h3>
-                    <h2 style={{ color: "#00C49F" }}>&#9632;</h2>
-                    <h3 style={{ color: '#0088FE' }}>Cloths</h3>
-                    <h2 style={{ color: "#0088FE" }}>&#9632;</h2>
-                    <h3 style={{ color: '#FF8042' }}>Books</h3>
-                    <h2 style={{ color: "#FF8042" }}>&#9632;</h2>
-                    <h3 style={{ color: '#FFBB28' }}>Electronics</h3>
-                    <h2 style={{ color: "#FFBB28" }}>&#9632;</h2>
-                    <h3 style={{ color: '#8884d8' }}>Jewelry</h3>
-                    <h2 style={{ color: "#8884d8" }}>&#9632;</h2>
+                    <p style={{ color: '#00C49F' }}>Fasteners</p>
+                    <p style={{ color: "#00C49F" }}>&#9632;</p>
+                    <p style={{ color: '#0088FE' }}>Connectors</p>
+                    <p style={{ color: "#0088FE" }}>&#9632;</p>
+                    <p style={{ color: '#FF8042' }}>Brackets</p>
+                    <p style={{ color: "#FF8042" }}>&#9632;</p>
+                    <p style={{ color: '#FFBB28' }}>Hinges</p>
+                    <p style={{ color: "#FFBB28" }}>&#9632;</p>
+                    <p style={{ color: '#8884d8' }}>Hooks</p>
+                    <p style={{ color: "#8884d8" }}>&#9632;</p>
+                    <p style={{ color: '#8a1e39' }}>Braces</p>
+                    <p style={{ color: "#8a1e39" }}>&#9632;</p>
+                    <p style={{ color: '#abc52b' }}>Adhesive</p>
+                    <p style={{ color: "#abc52b" }}>&#9632;</p>
+                    <p style={{ color: '#d23232' }}>Clamps</p>
+                    <p style={{ color: "#d23232" }}>&#9632;</p>
                 </div>
                 <div style={{ width: '100%', height: 400 }}>
                     <ResponsiveContainer>

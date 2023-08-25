@@ -13,7 +13,9 @@ const Carousel = () => {
 
         <Link to={`product/type/${item.name.toLowerCase()}`} key={item.name} >
             <div className="item" style={{ marginTop: 10 }} >
-                <img src={item.img} loading='lazy' alt={item.name} style={{ height: '100%', width: '100%', objectFit: 'contain' }} />
+                <div style={{ height:' 300px', width: '400px', display: 'flex', position: 'relative', cursor: 'pointer'}}>
+                <img src={item.img} loading='lazy' alt={item.name} style={{ height: '100%', width: '100%', objectFit: 'cover' }} />
+                </div>
             </div>
         </Link>
     ))

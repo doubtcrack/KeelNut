@@ -36,8 +36,8 @@ const AdminRegister = () => {
       if (!credentials.email && !credentials.firstName && !credentials.password && !credentials.phoneNumber && !credentials.lastName) {
         toast.error("All fields are required", { autoClose: 500, theme: 'colored' })
       }
-      else if (credentials.firstName.length <= 3 || credentials.lastName.length <= 3) {
-        toast.error("Please enter name with more than 3 characters", { autoClose: 500, theme: 'colored' })
+      else if (credentials.firstName.length <= 2 || credentials.lastName.length <= 2) {
+        toast.error("Please enter name with more than 2 characters", { autoClose: 500, theme: 'colored' })
       }
       else if (!emailRegex.test(credentials.email)) {
         toast.error("Please enter valid email", { autoClose: 500, theme: 'colored' })
@@ -59,6 +59,7 @@ const AdminRegister = () => {
             key: credentials.key
           })
         const receive = await sendAuth.data
+        console.log(receive)
         if (receive.success === true) {
           toast.success("Registered Successfully", { autoClose: 500, theme: 'colored' })
           localStorage.setItem('Authorization', receive.authToken)

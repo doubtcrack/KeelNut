@@ -38,22 +38,29 @@ const SingleCategory = () => {
 
     const productFilter = []
 
-    if (cat === 'book') {
-        productFilter.push('All', 'Scifi', 'Business', 'Mystery', 'Cookbooks', 'Accessories', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
+    if (cat === 'Fasteners') {
+        productFilter.push('All', 'Screws', 'Bolts', 'Nuts', 'Washers', 'Rivets', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
     }
-    else if (cat === 'cloths') {
-        productFilter.push('All', 'Men', 'Women', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
+    else if (cat === 'Connectors') {
+        productFilter.push('All', 'Bolts & Nuts', 'Pins & clips', 'Anchors', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
     }
-    else if (cat === 'shoe') {
-        productFilter.push('All', 'Running', 'Football', 'Formal', 'Casual', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
+    else if (cat === 'Brackets and Supports') {
+        productFilter.push('All', 'Angle Brackets', 'Shelf Brackets', 'Wall Mounts', 'Beam Hangers', 'Post Bases', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
     }
-    else if (cat === 'electronics') {
-        productFilter.push('All', 'Monitor', 'SSD', 'HDD', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
-
+    else if (cat === 'Hinges and Latches') {
+        productFilter.push('All', 'Door Hinges', 'Gate Hinges', 'Cabinet Hinges', 'Latches', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
     }
-    else if (cat === 'jewelry') {
-        productFilter.push('All')
-
+    else if (cat === 'Hooks and Fastening') {
+        productFilter.push('All', 'Screw Hooks', 'Eye Bolts', 'Snap Hooks', 'Clevis Hooks', 'S-Hooks', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
+    }
+    else if (cat === 'Braces and Plates') {
+        productFilter.push('All', 'Mending Plates', 'Corner Braces', 'T-Plates', 'Flat Braces', 'Gusset Plates', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
+    }
+    else if (cat === 'Adhesive and Sealants') {
+        productFilter.push('All', 'Epoxy', 'Silicone Sealant', 'Construction Adhesive', 'Threadlocker', 'Sealant Tape', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
+    }
+    else if (cat === 'Clamps and Vises') {
+        productFilter.push('All', 'C-Clamps', 'Pipe Clamps', 'Bar Clamps', 'Bench Vises', 'Toggle Clamps', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
     }
 
     const handleChange = (e) => {
