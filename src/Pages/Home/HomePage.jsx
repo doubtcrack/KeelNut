@@ -32,7 +32,7 @@ const HomePage = () => {
 
     return (
         <>
-            <Container maxWidth='xl' style={{ display: 'flex', justifyContent: "center", padding: 0, flexDirection: "column", marginBottom: 70 }}>
+            <Container maxWidth='xl' style={{ display: 'flex', justifyContent: "center", padding: 0, flexDirection: "column", marginBottom: 70, marginTop: 50 }}>
                 <Box padding={2}>
                     {/* <Box style={{display:'flex', justifyContent:'space-between', marginBottom:50, alignItems:'center' }} md={{display:'none'}}>
                     <Typography variant='h5' sx={{ textAlign: 'left', color: '#4a4848',fontSize: 28, fontWeight: 'bold', lineHeight:'1.25' }}>Find your<br/> necessory Tools</Typography>

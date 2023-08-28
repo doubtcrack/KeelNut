@@ -62,7 +62,7 @@ const SearchBar = () => {
                     <Stack spacing={0}>
 
                         {filteredData.length === 0 ?
-                            <Typography variant="h6" textAlign="center" margin="25px 0">Product Not Found</Typography>
+                            <Typography variant="h6" textAlign="center" margin="25px 0" backgroundColor="white" padding="12px" borderRadius="6px">Product Not Found</Typography>
                             : filteredData.map(products => (
                                 <Link to={`/Detail/type/${products.type}/${products._id}`} key={products._id}>
                                     <Item sx={{ borderRadius: 0, display: 'flex', justifyContent: 'space-between', padding: "2px 15px", alignItems: 'center' }}>

@@ -74,10 +74,15 @@ nav ul .nav-links:hover:after {
     .nav ul {
         display: none;
     }
+    nav .logo {
+        /* background-color: green; */
+        display: none;
+    }
 
     .nav {
         display: block;
     }
+
 }
 
 
