@@ -1,7 +1,6 @@
 .nav {
     display: flex;
-    justify-content: space-around;
-    gap: 220px;
+    justify-content: space-between;
     align-items: center;
     padding: 10px;
     /* margin: 5px; */
@@ -10,8 +9,7 @@
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: white;
-    
+    background: linear-gradient(90deg, rgba(80,189,175,1) 0%, rgba(53,219,164,1) 35%, rgba(0,195,141,1) 100%);;
     /* background-color: red; */
     /* border-radius: 10px; */
 }
@@ -21,7 +19,7 @@ nav .logo {
     width: 100px;
     font-weight: 800;
     font-size: 25px;
-
+color:white;
 }
 
 nav ul {

@@ -58,7 +58,7 @@ const SearchBar = () => {
             />
             {
                 searchTerm.length > 0 &&
-                <Box sx={{ width: { xs: 350, sm: 500, md: 800 }, overflowY: "scroll", height: "200px" }}>
+                <Box sx={{ width: { xs: 350, sm: 500, md: 800 }, overflowY: "scroll", height: "200px" }} style={{position:'fixed', top:'5rem'}}>
                     <Stack spacing={0}>
 
                         {filteredData.length === 0 ?

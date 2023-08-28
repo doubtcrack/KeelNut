@@ -1,3 +1,7 @@
+import img1 from "../Images/1.png";
+import img2 from "../Images/2.png";
+import img3 from "../Images/3.png";
+
 export let payment = 'https://res.cloudinary.com/dxguqzge7/image/upload/v1682838910/payment_mkel3w.jpg';
 export let profile = 'https://res.cloudinary.com/dxguqzge7/image/upload/v1682838912/vecteezy_user-avatar-line-style__x94mjc.jpg';
 export let MaleCloth = 'https://res.cloudinary.com/dxguqzge7/image/upload/v1682838911/Male-Cloth_fyyrzb.jpg';
@@ -9,3 +13,6 @@ export let Shoes = 'https://res.cloudinary.com/dxguqzge7/image/upload/v168283891
 export let Books = 'https://res.cloudinary.com/dxguqzge7/image/upload/v1682838761/Book_lc6ikb.jpg';
 export let EmptyCart = 'https://res.cloudinary.com/dxguqzge7/image/upload/v1682838909/Cart_bk4xgl.jpg';
 export let customerReview = "https://res.cloudinary.com/dxguqzge7/image/upload/v1682838911/Review_bm6chw.jpg";
+export let banner1 = img1;
+export let banner2 = img2;
+export let banner3 = img3;

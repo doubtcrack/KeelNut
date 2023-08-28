@@ -1,9 +1,10 @@
 import './Mobile.css'
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
-import { AiOutlineHome, AiOutlineHeart, AiOutlineShoppingCart, AiFillMail, AiFillCloseCircle } from 'react-icons/ai'
-import { CgProfile } from 'react-icons/cg'
+import { AiOutlineHeart, AiFillCloseCircle, AiOutlineUser } from 'react-icons/ai'
+import {TbSmartHome} from 'react-icons/tb'
 import { FiLogOut } from 'react-icons/fi'
+import {BsHandbag, BsTools} from 'react-icons/bs'
 import React, {  useContext, useEffect, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Badge, Button, Dialog, DialogActions, DialogContent, Slide, Typography } from '@mui/material';
@@ -28,47 +29,55 @@ const MobileNavigation = () => {
     }, [])
 
     return (
-        <Box className='showMobile'>
-            <BottomNavigation sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', position: 'fixed', bottom: 0, overflowX: 'hidden', height: 60, background: 'white' }}>
+        <Box className='showMobile' sx={{margin:'3%',}}>
+            <BottomNavigation sx={{ display: 'flex', justifyContent: 'space-between', width: '94%', position: 'fixed', borderRadius:'50px', bottom: 0, overflowX: 'hidden', height: 70, background: '#F5F5F5' }}>
                 <NavLink to='/' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
                     <div className='links'>
-                        <AiOutlineHome style={{ fontSize: 23, }} />
-                    </div>
-                </NavLink>
-                <NavLink to='/cart' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
-                    <div className='links'>
-                        <Badge badgeContent={setProceed ? cart.length : 0} >
-                            <AiOutlineShoppingCart style={{ fontSize: 23 }} />
-                        </Badge>
+                        <TbSmartHome style={{ fontSize: 20, color:'#393939', }} />
                     </div>
                 </NavLink>
                 <NavLink to='/wishlist' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}  >
                     <div className='links' >
                         <Badge badgeContent={setProceed ? wishlistData.length : 0} >
-                            <AiOutlineHeart style={{ fontSize: 23, }} />
+                            <AiOutlineHeart style={{ fontSize: 20, color:'#393939', }} />
                         </Badge>
                     </div>
                 </NavLink>
 
+                <NavLink to='/cart' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', 
+}} >
+                    <div className='links'>
+                            <BsTools style={{ fontSize: 50, color:'#393939', background:'#35dbb6', borderRadius:'50px' , padding: '18px', boxShadow:' 4.8px 0px 7.6px rgba(0, 0, 0, 0.032),16.1px 0px 25.7px rgba(0, 0, 0, 0.048),72px 0px 115px rgba(0, 0, 0, 0.08)' }} />
+                    </div>
+                </NavLink>
+                
+                <NavLink to='/cart' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
+                    <div className='links'>
+                        <Badge badgeContent={setProceed ? cart.length : 0} >
+                            <BsHandbag style={{ fontSize: 20, color:'#393939' }} />
+                        </Badge>
+                    </div>
+                </NavLink>
+                
+             
 
                 {
                     setProceed ?
                         <>
                             <NavLink to='/update' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
                                 <div className='links'>
-                                    <CgProfile style={{ fontSize: 23, }} />
+                                    <AiOutlineUser style={{ fontSize: 20, color:'#393939', }} />
 
                                 </div>
                             </NavLink>
-                            <div className='links' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => handleClickOpen(setOpenAlert)}>
-                                <FiLogOut style={{ fontSize: 23, }} />
+                            {/* <div className='links' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => handleClickOpen(setOpenAlert)}>
+                                <FiLogOut style={{ fontSize: 20, color:'#393939', }} />
 
-                            </div>
+                            </div> */}
                         </>
                         : <NavLink to='/login' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
                             <div className='links'>
-                                <CgProfile style={{ fontSize: 23, }} />
-                                {/* <span style={{ fontSize: 12 }}>Login</span> */}
+                                <AiOutlineUser style={{ fontSize: 20, color:'#393939', }} />
                             </div>
                         </NavLink>
                 }

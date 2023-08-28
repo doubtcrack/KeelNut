@@ -1,18 +1,21 @@
 import './Desktop.css'
 import React, { useContext, useEffect, useState } from 'react'
-import { AiOutlineHeart, AiOutlineShoppingCart, AiFillCloseCircle } from 'react-icons/ai'
-import { CgProfile } from 'react-icons/cg'
+import { AiOutlineHeart, AiOutlineUser, AiFillCloseCircle } from 'react-icons/ai'
 import { FiLogOut } from 'react-icons/fi'
+import {BsThreeDotsVertical,BsHandbag} from "react-icons/bs"
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { Badge, Button, Dialog, DialogActions, DialogContent, Menu, MenuItem, Slide, Tooltip, Typography } from '@mui/material';
+import { Badge, Button, Dialog, DialogActions, DialogContent, Menu, MenuItem, Slide, Tooltip, Typography,ListItemIcon   } from '@mui/material';
 import { ContextFunction } from '../Context/Context';
 import { toast } from 'react-toastify';
 import { getCart, getWishList, handleLogOut, handleClickOpen, handleClose, Transition } from '../Constants/Constant'
-
+import SearchBar from '../Components/SearchBar/SearchBar'
 const DesktopNavigation = () => {
 
   const { cart, setCart, wishlistData, setWishlistData } = useContext(ContextFunction)
   const [openAlert, setOpenAlert] = useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
   const navigate = useNavigate()
   let authToken = localStorage.getItem('Authorization');
   let setProceed = authToken !== null ? true : false
@@ -22,6 +25,13 @@ const DesktopNavigation = () => {
   }, [])
 
 
+  const anchorClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const anchorClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <>
       <nav className='nav'>
@@ -30,30 +40,18 @@ const DesktopNavigation = () => {
             <span >KeelNut</span>
           </Link>
         </div>
+        <SearchBar />
         <div className="nav-items">
           <ul className="nav-items">
             <li className="nav-links">
-              <NavLink to='/'>
-                <span className='nav-icon-span'>  Home</span>
-              </NavLink>
-            </li>
-            {/* <li className="nav-links">
-              <NavLink to='/contact'>
-                <span className='nav-icon-span'>  Contact Us</span>
-              </NavLink>
-            </li> */}
-
-            <li className="nav-links">
               <Tooltip title='Cart'>
-                <NavLink to="/cart">
-                  <span className='nav-icon-span'>Cart    <Badge badgeContent={setProceed ? cart.length : 0}> <AiOutlineShoppingCart className='nav-icon' /></Badge></span>
+                <NavLink to="/cart"><Badge badgeContent={setProceed ? cart.length : 0}> <BsHandbag style={{ fontSize: 20, color:'white' }}/></Badge>
                 </NavLink>
               </Tooltip>
             </li>
             <li className="nav-links">
               <Tooltip title='Wishlist'>
-                <NavLink to="/wishlist">
-                  <span className='nav-icon-span'>Wishlist  <Badge badgeContent={setProceed ? wishlistData.length : 0}> <AiOutlineHeart className='nav-icon' /></Badge></span>
+                <NavLink to="/wishlist"><Badge badgeContent={setProceed ? wishlistData.length : 0}> <AiOutlineHeart style={{ fontSize: 20, color:'white' }} /></Badge>
                 </NavLink>
               </Tooltip>
             </li>
@@ -63,22 +61,58 @@ const DesktopNavigation = () => {
                 <>
                   <li className="nav-links">
                     <Tooltip title='Profile'>
-                      <NavLink to='/update'>
-                        <span className='nav-icon-span'>  <CgProfile style={{ fontSize: 29, marginTop: 7,marginRight:10 }} /></span>
+                      <NavLink to='/update'><AiOutlineUser style={{ fontSize: 20, color:'white', marginBottom: '-5px' }} />
                       </NavLink>
                     </Tooltip>
                   </li>
-                  <li style={{ display: 'flex', alignItems: 'center', justifyItems: 'center' }} onClick={() => handleClickOpen(setOpenAlert)}>
-                    <Button variant='contained' className='nav-icon-span' sx={{ marginBottom: 1 }} endIcon={<FiLogOut />}>
+                  <li style={{ display: 'flex', alignItems: 'center', justifyItems: 'center' }}>
+                  <BsThreeDotsVertical  onClick={anchorClick} aria-controls={open ? 'account-menu' : undefined} aria-haspopup="true"  aria-expanded={open ? 'true' : undefined} style={{ fontSize: 20, color:'white' }} />
+                    <Menu
+        anchorEl={anchorEl}
+        id="account-menu"
+        open={open}
+        onClose={anchorClose}
+        onClick={anchorClose}
+        PaperProps={{
+          elevation: 0,
+          sx: {
+            overflow: 'visible',
+            filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+            mt: 1.5,
+            '& .MuiAvatar-root': {
+              width: 32,
+              height: 32,
+              ml: -0.5,
+              mr: 1,
+            },
+            '&:before': {
+              content: '""',
+              display: 'block',
+              position: 'absolute',
+              top: 0,
+              right: 14,
+              width: 10,
+              height: 10,
+              bgcolor: 'background.paper',
+              transform: 'translateY(-50%) rotate(45deg)',
+              zIndex: 0,
+            },
+          },
+        }}
+        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+      ><MenuItem onClick={() => handleClickOpen(setOpenAlert)}>
+                    <Button variant='contained' endIcon={<FiLogOut />}>
                       <Typography variant='button'> Logout</Typography>
                     </Button>
+    </MenuItem></Menu>
                   </li>
+                  
                 </>
                 :
                 <li className="nav-links">
                   <Tooltip title='Login'>
-                    <NavLink to='/login'>
-                      <span className='nav-icon-span'>   <CgProfile style={{ fontSize: 29, marginTop: 7 }} /></span>
+                    <NavLink to='/login'><AiOutlineUser style={{ fontSize: 20, color:'white', marginBottom: '-5px'}} />
                     </NavLink>
                   </Tooltip>
                 </li>

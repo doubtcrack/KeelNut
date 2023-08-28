@@ -5,9 +5,8 @@ import { Box } from '@mui/system'
 import { useContext } from 'react'
 import { ContextFunction } from '../../Context/Context'
 import CategoryCard from '../../Components/Category_Card/CategoryCard';
-import BannerData from '../../Helpers/HomePageBanner';
+import CategoryData from '../../Helpers/Categories';
 import Carousel from '../../Components/Carousel/Carousel'
-import SearchBar from '../../Components/SearchBar/SearchBar'
 import CopyRight from '../../Components/CopyRight/CopyRight'
 const HomePage = () => {
     const { setCart } = useContext(ContextFunction)
@@ -34,16 +33,17 @@ const HomePage = () => {
     return (
         <>
             <Container maxWidth='xl' style={{ display: 'flex', justifyContent: "center", padding: 0, flexDirection: "column", marginBottom: 70 }}>
-                <Box padding={1}>
+                <Box padding={2}>
+                    {/* <Box style={{display:'flex', justifyContent:'space-between', marginBottom:50, alignItems:'center' }} md={{display:'none'}}>
+                    <Typography variant='h5' sx={{ textAlign: 'left', color: '#4a4848',fontSize: 28, fontWeight: 'bold', lineHeight:'1.25' }}>Find your<br/> necessory Tools</Typography>
+                    <CgSearch style={{ fontSize: 40, color:'#393939', border:'2px solid #EAEBED', padding:'10px', borderRadius:'50px'}} />
+                    </Box> */}
                     <Carousel />
                 </Box>
-                <Container style={{ marginTop: 90, display: "flex", justifyContent: 'center' }}>
-                    <SearchBar />
-                </Container>
                 <Typography variant='h3' sx={{ textAlign: 'center', marginTop: 10, color: '#1976d2', fontWeight: 'bold' }}>Categories</Typography>
                 <Container maxWidth='xl' style={{ marginTop: 90, display: "flex", justifyContent: 'center', flexGrow: 1, flexWrap: 'wrap', gap: 20, }}>
                     {
-                        BannerData.map(data => (
+                        CategoryData.map(data => (
                             <CategoryCard data={data} key={data.img} />
                         ))
                     }

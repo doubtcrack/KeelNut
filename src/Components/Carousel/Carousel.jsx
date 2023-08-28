@@ -7,31 +7,31 @@ const Carousel = () => {
     const responsive = {
         0: { items: 1 },
         568: { items: 2 },
-        1024: { items: 3, itemsFit: 'contain' },
+        // 1024: { items: 3, itemsFit: 'contain' },
     };
     const items = BannerData.map((item) => (
 
-        <Link to={`product/type/${item.name.toLowerCase()}`} key={item.name} >
-            <div className="item" style={{ marginTop: 10 }} >
-                <div style={{ height:' 300px', width: '400px', display: 'flex', position: 'relative', cursor: 'pointer'}}>
-                <img src={item.img} loading='lazy' alt={item.name} style={{ height: '100%', width: '100%', objectFit: 'cover' }} />
+        // <Link to={`product/type/${item.name.toLowerCase()}`} key={item.name} >
+            <div className="item" style={{ margin: 10, }} key={item.name}>
+                <div style={{ height:' 100%', width: '100%', display: 'flex', position: 'relative', cursor: 'pointer'}}>
+                <img src={item.img} loading='lazy' alt={item.name} style={{ height: '100%', width: '100%', objectFit: 'contain', borderRadius: '12px' }} />
                 </div>
             </div>
-        </Link>
+        // </Link>
     ))
 
     return (
         <AliceCarousel
             animationType="fadeout"
-            animationDuration={800}
+            animationDuration={2500}
             disableButtonsControls
             infinite
             items={items}
             touchTracking
             mouseTracking
-            disableDotsControls
+            // disableDotsControls
             autoPlay
-            autoPlayInterval={2500}
+            autoPlayInterval={9500}
             responsive={responsive}
         />
     )
