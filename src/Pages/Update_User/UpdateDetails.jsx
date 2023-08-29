@@ -173,7 +173,7 @@ const UpdateDetails = () => {
     return (
         <>
             <Container sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', marginBottom: 10 }}>
-                <Typography variant='h6' sx={{ margin: '30px 0', fontWeight: 'bold', color: '#1976d2' }}>Personal Information</Typography>
+                <Typography variant='h6' sx={{ margin: '30px 0', fontWeight: 'bold', color: 'rgba(0,195,141,1)' }}>Personal Information</Typography>
                 <form noValidate autoComplete="off" className={styles.checkout_form} onSubmit={handleSubmit} >
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={6}>
@@ -202,12 +202,12 @@ const UpdateDetails = () => {
                         </Grid>
                     </Grid>
                     <Container sx={{ display: 'flex', justifyContent: 'space-around', marginTop: 5 }}>
-                        <Button variant='contained' endIcon={<TiArrowBackOutline />} onClick={()=>navigate(-1)} >Back</Button>
-                        <Button variant='contained' endIcon={<AiOutlineFileDone />}  type='submit'>Save</Button>
+                        <Button variant='contained' sx={{ backgroundColor: '#35dbb6', ":hover": {bgcolor: "rgba(0,195,141,1)",} }} endIcon={<TiArrowBackOutline />} onClick={()=>navigate(-1)} >Back</Button>
+                        <Button variant='contained' sx={{ backgroundColor: '#35dbb6', ":hover": {bgcolor: "rgba(0,195,141,1)",} }} endIcon={<AiOutlineFileDone />}  type='submit'>Save</Button>
                     </Container>
                 </form >
 
-                <Typography variant='h6' sx={{ margin: '20px 0', fontWeight: 'bold', color: '#1976d2' }}>Reset Password</Typography>
+                <Typography variant='h6' sx={{ margin: '20px 0', fontWeight: 'bold', color: 'rgba(0,195,141,1)' }}>Reset Password</Typography>
                 <form onSubmit={handleResetPassword}>
                     <Grid container spacing={2}>
                         <Grid item xs={12} >

@@ -96,8 +96,8 @@ const ProductDetail = () => {
 
         const data = {
             text: product.name,
-            title: "e-shopit",
-            url: `https://e-shopit.vercel.app/Detail/type/${cat}/${id}`
+            title: "KeelNut",
+            url: `https://keelnut.vercel.app/Detail/type/${cat}/${id}`
         }
         if (navigator.canShare && navigator.canShare(data)) {
             navigator.share(data);
@@ -112,19 +112,13 @@ const ProductDetail = () => {
         setSimilarProduct(data)
     }
     let data = [];
-    if (cat === 'shoe') {
-        data.push(product?.brand, product?.gender, product?.category)
+    if (cat === 'Adhesive and Sealants') {
+        data.push(product?.brand, product?.category)
     }
-    else if (cat === 'book') {
-        data.push(product.author, product.category)
-    }
-    else if (cat === 'cloths') {
+    else if (cat === 'Fasteners' || cat==='Connectors'|| cat==='Brackets and Supports'|| cat==='Hinges and Latches'|| cat==='Hooks and Fastening'|| cat==='Braces and Plates'|| cat==='Clamps and Vises') {
         data.push(product.category, cat)
     }
-    else if (cat === 'electronics') {
-        data.push(product.category, cat)
-    }
-    else if (cat === 'jewelry') {
+    else  {
         data.push(cat)
     }
     const increaseQuantity = () => {

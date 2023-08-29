@@ -1,6 +1,6 @@
 .mainCard {
-    height: 300px;
-    width: 400px;
+    height: 100%;
+    width: 100%;
     display: flex;
     position: relative;
     cursor: pointer;
@@ -20,14 +20,13 @@
 }
 
 .imgTitle {
-    font-weight: bold;
+    font-weight:700;
     position: absolute;
-    top: 85%;
-    color: #4b4949;
+    bottom: 5%;
+    color: #fdfdfd;
     right: 9px;
-    background: #ecffa5;
     padding: 10px;
-    border-radius: 50px;
+    border-radius: 10px;
     padding-right: 10px;
     font-size: 14px;
 
@@ -35,14 +34,14 @@
 }
 
 @media screen and (max-width: 960px) {
-    .mainCard {
+    /* .mainCard {
         height: 200px;
         width: 300px;
-    }
+    } */
 
-    .imgTitle {
+    /* .imgTitle {
         font-size: 20px;
-    }
+    } */
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {

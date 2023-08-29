@@ -77,7 +77,7 @@ const Login = () => {
           alignItems: 'center',
         }}
       >
-        <Avatar sx={{ m: 1, bgcolor: '#1976d2' }}>
+        <Avatar sx={{ m: 1, bgcolor: '#35dbb6' }}>
           <MdLockOutline />
         </Avatar>
         <Typography component="h1" variant="h5">
@@ -95,6 +95,7 @@ const Login = () => {
             onChange={handleOnChange}
             autoComplete="email"
             autoFocus
+      
           />
           <TextField
             margin="normal"
@@ -124,19 +125,20 @@ const Login = () => {
             type="submit"
             fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2 }}
+            sx={{ mt: 3, mb: 2, backgroundColor: '#35dbb6', ":hover": {
+              bgcolor: "rgba(0,195,141,1)",} }}
           >
             Sign In
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link to="/forgotpassword" variant="body2" style={{ color: '#1976d2' }}>
+              <Link to="/forgotpassword" variant="body2" style={{ color: 'rgba(0,195,141,1)' }}>
                 Forgot password?
               </Link>
             </Grid>
             <Grid item>
               <Link to="/register" variant="body2" >
-                Don't have an account?<span style={{ color: '#1976d2' }}> Sign Up</span>
+                Don't have an account?<span style={{ color: 'rgba(0,195,141,1)' }}> Sign Up</span>
               </Link>
             </Grid>
           </Grid>

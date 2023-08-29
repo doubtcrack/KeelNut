@@ -4,6 +4,9 @@
   box-sizing: border-box;
   /* outline: 3px solid red !important; */
   font-family: 'Poppins', sans-serif;
+  input[type=text]:focus {
+    border: 1px solid #35dbb6 !important;
+  }
 }
 
 .main {
@@ -111,4 +114,5 @@ a {
     transform: translateY(-100%);
   }
 }
+
 

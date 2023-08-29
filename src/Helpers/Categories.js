@@ -1,34 +1,36 @@
+import {category1, category2, category3, category4, category5, category6, category7, category8} from './../Assets/Images/Image'
+
 const data = [
     {
-        img: "https://img.freepik.com/free-vector/decorative-frame-from-realistic-metal-fasteners-screws-bolts-nuts-nails-gray-white_1284-28980.jpg",
+        img: category1,
         name: "Fasteners"
     },
     {
-        img: "https://img.freepik.com/free-photo/animated-screw-still-life_52683-101642.jpg",
+        img: category2,
         name: "Connectors"
      },
     {
-        img: "https://img.freepik.com/premium-photo/sheet-metal-product-after-processing-bending-machine-sheet-metal-bending-tool-equipment-isolated-white-background-special-bending-machine-forming-mold-punch-die_347372-1150.jpg",
+        img: category3,
         name: "Brackets and Supports"
     },
     {
-        img: "https://img.freepik.com/premium-vector/golden-door-hinges-construction-hardware-realistic-set-gold-tools-joint-gates-windowsmetal-hinges-house-furniture-vector_144920-1720.jpg",
+        img: category4,
         name: "Hinges and Latches"
     },
     {
-        img: "https://img.freepik.com/free-vector/four-realistic-gold-horseshoes-set-with-shadows-silver-ribbons_1284-49881.jpg",
+        img: category5,
         name: "Hooks and Fastening"
     },
     {
-        img: "https://i.ebayimg.com/thumbs/images/g/CV8AAOSwEylk2gBz/s-l640.jpg",
+        img: category6,
         name: "Braces and Plates"
     },
     {
-        img: "https://img.freepik.com/premium-photo/paints-paper_624181-7618.jpg",
+        img: category7,
         name: "Adhesive and Sealants"
     },
     {
-        img: "https://img.freepik.com/free-photo/steel-wrenches-tools_144627-29294.jpg",
+        img: category8,
         name: "Clamps and Vises"
     },
 ]

@@ -50,7 +50,7 @@ const AddNewPassword = () => {
                     alignItems: 'center',
                 }}
             >
-                <Avatar sx={{ m: 1, bgcolor: '#1976d2' }}>
+                <Avatar sx={{ m: 1, bgcolor: '#35dbb6' }}>
                     <MdLockOutline />
                 </Avatar>
                 <Typography component="h1" variant="h5">

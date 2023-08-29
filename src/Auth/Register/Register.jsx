@@ -90,7 +90,7 @@ const Register = () => {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: '#1976d2' }}>
+          <Avatar sx={{ m: 1, bgcolor: '#35dbb6' }}>
             <MdLockOutline />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -179,14 +179,15 @@ const Register = () => {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2 , backgroundColor: '#35dbb6', ":hover": {
+                bgcolor: "rgba(0,195,141,1)",}}}
             >
               Sign Up
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
                 Already have an account?
-                <Link to='/login' style={{ color: '#1976d2', marginLeft: 3 }}>
+                <Link to='/login' style={{ color: 'rgba(0,195,141,1)', marginLeft: 3 }}>
                   Sign in
                 </Link>
               </Grid>

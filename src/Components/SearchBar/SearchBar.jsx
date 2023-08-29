@@ -47,7 +47,7 @@ const SearchBar = () => {
 
                 value={searchTerm}
                 onChange={handleSearch}
-                sx={{ width: { xs: 350, sm: 500, md: 800 }, }}
+                sx={{ width: { xs: 350, sm: 500, lg: 800 }, }}
                 InputProps={{
                     endAdornment: (
                         <InputAdornment position="end">
@@ -58,7 +58,7 @@ const SearchBar = () => {
             />
             {
                 searchTerm.length > 0 &&
-                <Box sx={{ width: { xs: 350, sm: 500, md: 800 }, overflowY: "scroll", height: "200px" }} style={{position:'fixed', top:'5rem'}}>
+                <Box sx={{ width: { xs: 350, sm: 500, lg: 800 }, overflowY: "scroll", height: "200px" }} style={{position:'fixed', top:'5rem'}}>
                     <Stack spacing={0}>
 
                         {filteredData.length === 0 ?

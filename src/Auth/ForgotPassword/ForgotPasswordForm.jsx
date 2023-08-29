@@ -35,7 +35,7 @@ const ForgotPasswordForm = () => {
                             alignItems: 'center',
                         }}
                     >
-                        <Avatar sx={{ m: 1, bgcolor: '#1976d2' }}>
+                        <Avatar sx={{ m: 1, bgcolor: '#35dbb6' }}>
                             <MdLockOutline />
                         </Avatar>
                         <Typography component="h1" variant="h5">
@@ -58,7 +58,8 @@ const ForgotPasswordForm = () => {
                                 type="submit"
                                 fullWidth
                                 variant="contained"
-                                sx={{ mt: 3, mb: 2 }}
+                                sx={{ mt: 3, mb: 2, backgroundColor: '#35dbb6', ":hover": {
+                                    bgcolor: "rgba(0,195,141,1)",} }}
                             >
                                 Submit
                             </Button>
@@ -77,7 +78,7 @@ const ForgotPasswordForm = () => {
                         padding: 4,
                     }}
                 >
-                    <Typography component="h2" variant="h6" color='#1976d2' margin="20px 0">
+                    <Typography component="h2" variant="h6" color='#35dbb6' margin="20px 0">
                         Email Sent Successfully
                     </Typography>
                     <a href="https://mail.google.com/mail/" target='_blank' rel='noreferrer'>  <Button endIcon={<MdMailOutline />} variant='contained'>Open Mail</Button></a>

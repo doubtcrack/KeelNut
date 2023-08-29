@@ -117,7 +117,6 @@ const SingleCategory = () => {
                     {productData.map(prod => (
                         <Link to={`/Detail/type/${cat}/${prod._id}`} key={prod._id}>
                             <ProductCard prod={prod} />
-
                         </Link>
                     ))}
                 </Container>
@@ -126,8 +125,4 @@ const SingleCategory = () => {
         </>
     )
 }
-
-
 export default SingleCategory
-
-    //         

@@ -6,7 +6,7 @@ const CopyRight = (props) => {
         <Box>
             <a href='https://tksuryavanshi.netlify.app/' target='_blank' rel='noreferrer' >
 
-<Typography variant="body1" fontWeight="bold" color="text.secondary" align="center" {...props} style={{ color: '#1976d2',  }}>
+<Typography variant="body1" fontWeight="bold" color="text.secondary" align="center" {...props} style={{ color: '#35dbb6',  }}>
     {' '}
     {new Date().getFullYear()}
     {/* {'.'} */}

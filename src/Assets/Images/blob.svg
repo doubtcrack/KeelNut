@@ -1,0 +1,25 @@
+<style>
+  .float {  
+    animation-name: ani-float;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out; 
+  }
+ 
+  @keyframes ani-float {
+    0% { transform: translate(0,  0px); }
+    50% { transform: translate(0, 15px); }
+    100% { transform: translate(0, -0px); }    
+  }
+</style>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" 
+  viewBox="-25 -25 250 250" class="float"> 
+  <defs>
+   <linearGradient id="lgrad" x1="0%" y1="0%" x2="100%" y2="100%" >
+     <stop offset="0%" style="stop-color:#00FF84;stop-opacity:1.00" />
+     <stop offset="100%" style="stop-color:#00b8e6;stop-opacity:1.00" />
+   </linearGradient>
+  </defs>
+  <path d="M194.07203616938867 66.0816862013273 C192.65721440433632 43.39929318520895 149.96475804505857 8.66071923649547 127.73742537389157 3.9238050627118213 C99.56216337487092 -2.080684989590134 30.6502984826969 15.313440292658449 18.83425574254575 41.586628592987964 C1.398002019766416 80.35645935487665 41.85418244824781 192.32473958743824 83.88474984696043 198.6929516860498 C126.50214252937677 205.15007592891112 196.7554341956508 109.10186736746924 194.07203616938867 66.0816862013273Z" stroke="none" fill="url(#lgrad)"  />
+</svg>
