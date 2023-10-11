@@ -20,7 +20,7 @@ const HomePage = () => {
     }, [])
     const getCart = async () => {
         if (authToken !== null) {
-            const { data } = await axios.get(`${process.env.REACT_APP_GET_CART}`,
+            const { data } = await axios.get(`${process.env.REACT_APP_SERVER_URL}/cart/fetchcart`,
                 {
                     headers: {
                         'Authorization': authToken

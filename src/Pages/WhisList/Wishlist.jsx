@@ -23,7 +23,7 @@ const Wishlist = () => {
     }, [])
     const getWishList = async () => {
         if (setProceed) {
-            const { data } = await axios.get(`${process.env.REACT_APP_GET_WISHLIST}`,
+            const { data } = await axios.get(`${process.env.REACT_APP_SERVER_URL}/wishlist/fetchwishlist`,
                 {
                     headers: {
                         'Authorization': authToken
@@ -38,7 +38,7 @@ const Wishlist = () => {
     const removeFromWishlist = async (product) => {
         if (setProceed) {
             try {
-                const deleteProduct = await axios.delete(`${process.env.REACT_APP_DELETE_WISHLIST}/${product._id}`, {
+                const deleteProduct = await axios.delete(`${process.env.REACT_APP_SERVER_URL}/wishlist/deletwishlist/${product._id}`, {
                     headers: {
                         'Authorization': authToken
                     }

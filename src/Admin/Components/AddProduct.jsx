@@ -49,7 +49,7 @@ const AddProduct = ({ getProductInfo, data }) => {
 
             }
             else {
-                const { data } = await axios.post(`${process.env.REACT_APP_ADMIN_ADD_PRODUCT}`,
+                const { data } = await axios.post(`${process.env.REACT_APP_SERVER_URL}/admin/addproduct`,
                     {
                         name: productInfo.name,
                         brand: productInfo.brand,
@@ -98,22 +98,22 @@ const AddProduct = ({ getProductInfo, data }) => {
     else if (productInfo.type === 'Connectors') {
         productFilter.push('Bolts & Nuts', 'Pins & clips', 'Anchors')
     }
-    else if (productInfo.type === 'Brackets and Supports') {
+    else if (productInfo.type === 'Brackets') {
         productFilter.push('Angle Brackets', 'Shelf Brackets', 'Wall Mounts', 'Beam Hangers', 'Post Bases')
     }
-    else if (productInfo.type === 'Hinges and Latches') {
+    else if (productInfo.type === 'Hinges') {
         productFilter.push('Door Hinges', 'Gate Hinges', 'Cabinet Hinges', 'Latches')
     }
-    else if (productInfo.type === 'Hooks and Fastening') {
+    else if (productInfo.type === 'Hooks') {
         productFilter.push('Screw Hooks', 'Eye Bolts', 'Snap Hooks', 'Clevis Hooks', 'S-Hooks')
     }
-    else if (productInfo.type === 'Braces and Plates') {
+    else if (productInfo.type === 'Braces') {
         productFilter.push('Mending Plates', 'Corner Braces', 'T-Plates', 'Flat Braces', 'Gusset Plates')
     }
-    else if (productInfo.type === 'Adhesive and Sealants') {
+    else if (productInfo.type === 'Adhesive') {
         productFilter.push('Epoxy', 'Silicone Sealant', 'Construction Adhesive', 'Threadlocker', 'Sealant Tape')
     }
-    else if (productInfo.type === 'Clamps and Vises') {
+    else if (productInfo.type === 'Clamps') {
         productFilter.push('C-Clamps', 'Pipe Clamps', 'Bar Clamps', 'Bench Vises', 'Toggle Clamps')
     }
 
@@ -121,7 +121,7 @@ const AddProduct = ({ getProductInfo, data }) => {
         productFilter.push('all')
 
     }
-    const typeDropdown = ['Fasteners', 'Connectors', 'Brackets and Supports', 'Hinges and Latches', 'Hooks and Fastening', 'Braces and Plates', 'Adhesive and Sealants', 'Clamps and Vises'];
+    const typeDropdown = ['Fasteners', 'Connectors', 'Brackets', 'Hinges', 'Hooks', 'Braces', 'Adhesive', 'Clamps'];
     const adhesiveBrand = ['3M', 'Loctite', 'Gorilla Glue', 'Dow', 'Henkel(Titebond)', 'Bostik', 'Sika', 'Permatex', 'Devcon', 'Master Bond', 'GE Silicone', 'DAP Products', 'Sachco', 'Tremco', 'Polyseamseal', 'OSI Sealants', 'Henkel(Loctite)', 'BASF(MasterSeal)']
 
 

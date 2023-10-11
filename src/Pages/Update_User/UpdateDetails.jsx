@@ -43,7 +43,7 @@ const UpdateDetails = () => {
     }, [])
     const getUserData = async () => {
         try {
-            const { data } = await axios.get(`${process.env.REACT_APP_GET_USER_DETAILS}`, {
+            const { data } = await axios.get(`${process.env.REACT_APP_SERVER_URL}/auth/getuser`, {
                 headers: {
                     'Authorization': authToken
                 }
@@ -99,7 +99,7 @@ const UpdateDetails = () => {
                 toast.error("Please add state", { autoClose: 500, theme: 'colored' })
             }
             else {
-                const { data } = await axios.put(`${process.env.REACT_APP_UPDATE_USER_DETAILS}`, {
+                const { data } = await axios.put(`${process.env.REACT_APP_SERVER_URL}/auth/updateuser`, {
                     userDetails: JSON.stringify(userDetails)
                 },
                     {
@@ -136,7 +136,7 @@ const UpdateDetails = () => {
                 toast.error("Please enter password with more than 5 characters", { autoClose: 500, theme: 'colored' })
             }
             else {
-                const { data } = await axios.post(`${process.env.REACT_APP_RESET_PASSWORD}`, {
+                const { data } = await axios.post(`${process.env.REACT_APP_SERVER_URL}/password/reset/password`, {
                     id: userData._id,
                     currentPassword: password.currentPassword,
                     newPassword: password.newPassword,
@@ -156,7 +156,7 @@ const UpdateDetails = () => {
     }
     const deleteAccount = async () => {
         try {
-            const deleteUser = await axios.delete(`${process.env.REACT_APP_DELETE_USER_DETAILS}/${userData._id}`, {
+            const deleteUser = await axios.delete(`${process.env.REACT_APP_SERVER_URL}/auth/delete/user/${userData._id}`, {
                 headers: {
                     'Authorization': authToken
                 }

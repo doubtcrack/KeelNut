@@ -46,7 +46,7 @@ const CheckoutForm = () => {
     })
     const getUserData = async () => {
         try {
-            const { data } = await axios.get(`${process.env.REACT_APP_GET_USER_DETAILS}`, {
+            const { data } = await axios.get(`${process.env.REACT_APP_SERVER_URL}/auth/getuser`, {
                 headers: {
                     'Authorization': authToken
                 }
@@ -78,8 +78,8 @@ const CheckoutForm = () => {
         }
         else {
             try {
-                const { data: { key } } = await axios.get(`${process.env.REACT_APP_GET_KEY}`)
-                const { data } = await axios.post(`${process.env.REACT_APP_GET_CHECKOUT}`, {
+                const { data: { key } } = await axios.get(`${process.env.REACT_APP_SERVER_URL}/getkey`)
+                const { data } = await axios.post(`${process.env.REACT_APP_SERVER_URL}/checkout`, {
                     amount: totalAmount,
                     productDetails: JSON.stringify(cart),
                     userId: userData._id,
@@ -94,7 +94,7 @@ const CheckoutForm = () => {
                     description: "Payment",
                     image: profile,
                     order_id: data.order.id,
-                    callback_url: process.env.REACT_APP_GET_PAYMENTVERIFICATION,
+                    callback_url: `${process.env.REACT_APP_SERVER_URL}/paymentverification`,
                     prefill: {
                         name: userData.firstName + ' ' + userData.lastName,
                         email: userData.email,

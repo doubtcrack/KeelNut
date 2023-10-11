@@ -55,7 +55,7 @@ const ProductReview = ({ authToken, setProceed, setOpenAlert, id }) => {
     }
     const fetchReviews = async () => {
         const filter = filterOption.toLowerCase()
-        const { data } = await axios.post(`${process.env.REACT_APP_GET_REVIEW}/${id}`, { filterType: filter })
+        const { data } = await axios.post(`${process.env.REACT_APP_SERVER_URL}/review/fetchreview/${id}`, { filterType: filter })
         setReviews(data)
     }
     useEffect(() => {
@@ -76,7 +76,7 @@ const ProductReview = ({ authToken, setProceed, setOpenAlert, id }) => {
         else if (comment.length >= 4 && value > 0) {
             try {
                 if (setProceed) {
-                    const { data } = await axios.post(`${process.env.REACT_APP_ADD_REVIEW}`, { id: id, comment: comment, rating: value }, {
+                    const { data } = await axios.post(`${process.env.REACT_APP_SERVER_URL}/review/addreview`, { id: id, comment: comment, rating: value }, {
                         headers: {
                             'Authorization': authToken
                         }

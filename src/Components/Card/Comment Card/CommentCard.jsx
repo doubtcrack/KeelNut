@@ -17,7 +17,7 @@ const CommentCard = ({ userReview, setReviews, reviews, fetchReviews }) => {
         authToken && getUser()
     }, [])
     const getUser = async () => {
-        const { data } = await axios.get(`${process.env.REACT_APP_GET_USER_DETAILS}`, {
+        const { data } = await axios.get(`${process.env.REACT_APP_SERVER_URL}/auth/getuser`, {
             headers: {
                 'Authorization': authToken
             }
@@ -29,7 +29,7 @@ const CommentCard = ({ userReview, setReviews, reviews, fetchReviews }) => {
     }
     const handleDeleteComment = async () => {
         try {
-            const { data } = await axios.delete(`${process.env.REACT_APP_DELETE_REVIEW}/${userReview._id}`, {
+            const { data } = await axios.delete(`${process.env.REACT_APP_SERVER_URL}/review/deletereview/${userReview._id}`, {
                 headers: {
                     'Authorization': authToken
                 }
@@ -44,7 +44,7 @@ const CommentCard = ({ userReview, setReviews, reviews, fetchReviews }) => {
     const deleteCommentByAdmin = async () => {
         if (isAdmin) {
             try {
-                const { data } = await axios.delete(`${process.env.REACT_APP_ADMIN_DELETE_REVIEW}/${userReview._id}`,
+                const { data } = await axios.delete(`${process.env.REACT_APP_SERVER_URL}/admin/review/${userReview._id}`,
                     {
                         headers: {
                             'Authorization': authToken
@@ -73,7 +73,7 @@ const CommentCard = ({ userReview, setReviews, reviews, fetchReviews }) => {
         else if (editComment.length >= 4 && value > 0) {
             try {
                 if (authToken) {
-                    const response = await axios.put(`${process.env.REACT_APP_EDIT_REVIEW}`,
+                    const response = await axios.put(`${process.env.REACT_APP_SERVER_URL}/review/editreview`,
                         { id: userReview._id, comment: editComment, rating: value },
                         {
                             headers: {

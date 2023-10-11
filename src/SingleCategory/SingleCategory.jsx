@@ -27,7 +27,7 @@ const SingleCategory = () => {
     const getCategoryProduct = async () => {
         try {
             setIsLoading(true)
-            const { data } = await axios.post(`${process.env.REACT_APP_PRODUCT_TYPE}`, { userType: cat })
+            const { data } = await axios.post(`${process.env.REACT_APP_SERVER_URL}/product/fetchproduct/type`, { userType: cat })
             setIsLoading(false)
             setProductData(data)
 
@@ -44,22 +44,22 @@ const SingleCategory = () => {
     else if (cat === 'Connectors') {
         productFilter.push('All', 'Bolts & Nuts', 'Pins & clips', 'Anchors', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
     }
-    else if (cat === 'Brackets and Supports') {
+    else if (cat === 'Brackets') {
         productFilter.push('All', 'Angle Brackets', 'Shelf Brackets', 'Wall Mounts', 'Beam Hangers', 'Post Bases', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
     }
-    else if (cat === 'Hinges and Latches') {
+    else if (cat === 'Hinges') {
         productFilter.push('All', 'Door Hinges', 'Gate Hinges', 'Cabinet Hinges', 'Latches', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
     }
-    else if (cat === 'Hooks and Fastening') {
+    else if (cat === 'Hooks') {
         productFilter.push('All', 'Screw Hooks', 'Eye Bolts', 'Snap Hooks', 'Clevis Hooks', 'S-Hooks', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
     }
-    else if (cat === 'Braces and Plates') {
+    else if (cat === 'Braces') {
         productFilter.push('All', 'Mending Plates', 'Corner Braces', 'T-Plates', 'Flat Braces', 'Gusset Plates', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
     }
-    else if (cat === 'Adhesive and Sealants') {
+    else if (cat === 'Adhesive') {
         productFilter.push('All', 'Epoxy', 'Silicone Sealant', 'Construction Adhesive', 'Threadlocker', 'Sealant Tape', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
     }
-    else if (cat === 'Clamps and Vises') {
+    else if (cat === 'Clamps') {
         productFilter.push('All', 'C-Clamps', 'Pipe Clamps', 'Bar Clamps', 'Bench Vises', 'Toggle Clamps', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
     }
 
@@ -75,7 +75,7 @@ const SingleCategory = () => {
     const getData = async () => {
         setIsLoading(true)
         const filter = filterOption.toLowerCase()
-        const { data } = await axios.post(`${process.env.REACT_APP_PRODUCT_TYPE_CATEGORY_}`, { userType: cat, userCategory: filter })
+        const { data } = await axios.post(`${process.env.REACT_APP_SERVER_URL}/product/fetchproduct/category`, { userType: cat, userCategory: filter })
         setProductData(data)
         setIsLoading(false)
     }

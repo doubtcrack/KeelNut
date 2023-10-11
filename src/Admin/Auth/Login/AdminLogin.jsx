@@ -44,7 +44,7 @@ const AdminLogin = () => {
         toast.error("Please enter valid password", { autoClose: 500, theme: 'colored' })
       }
       else if (credentials.email && credentials.password) {
-        const sendAuth = await axios.post(process.env.REACT_APP_ADMIN_LOGIN,
+        const sendAuth = await axios.post(`${process.env.REACT_APP_SERVER_URL}/auth/login`,
           {
             email: credentials.email,
             password: credentials.password,

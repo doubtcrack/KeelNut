@@ -62,7 +62,7 @@ export default function BasicTabs({ user, setUser, getUser }) {
     }, [])
     const getProductInfo = async () => {
         try {
-            const { data } = await axios.get(process.env.REACT_APP_ADMIN_GET_CHART_DATA)
+            const { data } = await axios.get(`${process.env.REACT_APP_SERVER_URL}/admin/chartdata`)
             setProducts(data.product);
             setReview(data.review);
             setCart(data.cart);

@@ -7,7 +7,7 @@ const UserOrderItem = ({ commonGetRequest, id }) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        commonGetRequest(process.env.REACT_APP_ADMIN_GET_ORDER, id, setData);
+        commonGetRequest(`${process.env.REACT_APP_SERVER_URL}/admin/getorder`, id, setData);
     }, [])
     const total = data.reduce((acc, curr) => (acc + curr.totalAmount), 0);
     return (

@@ -33,7 +33,7 @@ const SingleProduct = () => {
         window.scroll(0, 0)
     }, [])
     const getSingleProduct = async () => {
-        const { data } = await axios.get(`${process.env.REACT_APP_FETCH_PRODUCT}/${id}`)
+        const { data } = await axios.get(`${process.env.REACT_APP_SERVER_URL}/product/fetchproduct/${id}`)
         productInfo.name = data.name
         productInfo.image = data.image
         productInfo.price = data.price
@@ -59,22 +59,22 @@ const SingleProduct = () => {
     else if (productInfo.type === 'Connectors') {
         productFilter.push('Bolts & Nuts', 'Pins & clips', 'Anchors')
     }
-    else if (productInfo.type === 'Brackets and Supports') {
+    else if (productInfo.type === 'Brackets') {
         productFilter.push('Angle Brackets', 'Shelf Brackets', 'Wall Mounts', 'Beam Hangers', 'Post Bases')
     }
-    else if (productInfo.type === 'Hinges and Latches') {
+    else if (productInfo.type === 'Hinges') {
         productFilter.push('Door Hinges', 'Gate Hinges', 'Cabinet Hinges', 'Latches')
     }
-    else if (productInfo.type === 'Hooks and Fastening') {
+    else if (productInfo.type === 'Hooks') {
         productFilter.push('Screw Hooks', 'Eye Bolts', 'Snap Hooks', 'Clevis Hooks', 'S-Hooks')
     }
-    else if (productInfo.type === 'Braces and Plates') {
+    else if (productInfo.type === 'Braces') {
         productFilter.push('Mending Plates', 'Corner Braces', 'T-Plates', 'Flat Braces', 'Gusset Plates')
     }
-    else if (productInfo.type === 'Adhesive and Sealants') {
+    else if (productInfo.type === 'Adhesive') {
         productFilter.push('Epoxy', 'Silicone Sealant', 'Construction Adhesive', 'Threadlocker', 'Sealant Tape')
     }
-    else if (productInfo.type === 'Clamps and Vises') {
+    else if (productInfo.type === 'Clamps') {
         productFilter.push('C-Clamps', 'Pipe Clamps', 'Bar Clamps', 'Bench Vises', 'Toggle Clamps')
     }
 
@@ -94,7 +94,7 @@ const SingleProduct = () => {
         else {
             setError(false)
             try {
-                const { data } = await axios.put(`${process.env.REACT_APP_ADMIN_UPDATE_PRODUCT}/${product._id}`, { productDetails: productInfo }, {
+                const { data } = await axios.put(`${process.env.REACT_APP_SERVER_URL}/admin/updateproduct/${product._id}`, { productDetails: productInfo }, {
                     headers: {
                         'Authorization': authToken
                     }
@@ -115,7 +115,7 @@ const SingleProduct = () => {
     }
     const deleteProduct = async () => {
         try {
-            const { data } = await axios.delete(`${process.env.REACT_APP_ADMIN_DELETE_PRODUCT}/${product._id}`, {
+            const { data } = await axios.delete(`${process.env.REACT_APP_SERVER_URL}/admin/deleteproduct/${product._id}`, {
                 headers: {
                     'Authorization': authToken
                 }
@@ -134,7 +134,7 @@ const SingleProduct = () => {
             toast.error(error.response.data, { autoClose: 500, theme: 'colored' })
         }
     }
-    const typeDropdown = ['Fasteners', 'Connectors', 'Brackets and Supports', 'Hinges and Latches', 'Hooks and Fastening', 'Braces and Plates', 'Adhesive and Sealants', 'Clamps and Vises'];
+    const typeDropdown = ['Fasteners', 'Connectors', 'Brackets', 'Hinges', 'Hooks', 'Braces', 'Adhesive', 'Clamps'];
     const adhesiveBrand = ['3M', 'Loctite', 'Gorilla Glue', 'Dow', 'Henkel(Titebond)', 'Bostik', 'Sika', 'Permatex', 'Devcon', 'Master Bond', 'GE Silicone', 'DAP Products', 'Sachco', 'Tremco', 'Polyseamseal', 'OSI Sealants', 'Henkel(Loctite)', 'BASF(MasterSeal)']
 
 

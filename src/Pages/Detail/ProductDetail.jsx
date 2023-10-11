@@ -55,7 +55,7 @@ const ProductDetail = () => {
             try {
 
 
-                const { data } = await axios.post(`${process.env.REACT_APP_ADD_CART}`, { _id: product._id, quantity: productQuantity }, {
+                const { data } = await axios.post(`${process.env.REACT_APP_SERVER_URL}/cart/addcart`, { _id: product._id, quantity: productQuantity }, {
                     headers: {
                         'Authorization': authToken
                     }
@@ -74,7 +74,7 @@ const ProductDetail = () => {
     const addToWhishList = async (product) => {
         if (setProceed) {
             try {
-                const { data } = await axios.post(`${process.env.REACT_APP_ADD_WISHLIST}`, { _id: product._id }, {
+                const { data } = await axios.post(`${process.env.REACT_APP_SERVER_URL}/wishlist/addwishlist`, { _id: product._id }, {
                     headers: {
                         'Authorization': authToken
                     }
@@ -108,7 +108,7 @@ const ProductDetail = () => {
 
     }
     const getSimilarProducts = async () => {
-        const { data } = await axios.post(`${process.env.REACT_APP_PRODUCT_TYPE}`, { userType: cat })
+        const { data } = await axios.post(`${process.env.REACT_APP_SERVER_URL}/product/fetchproduct/type`, { userType: cat })
         setSimilarProduct(data)
     }
     let data = [];

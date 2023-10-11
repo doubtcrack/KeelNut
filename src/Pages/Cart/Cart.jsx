@@ -58,7 +58,7 @@ const Cart = () => {
 
     const getCart = async () => {
         if (setProceed) {
-            const { data } = await axios.get(`${process.env.REACT_APP_GET_CART}`,
+            const { data } = await axios.get(`${process.env.REACT_APP_SERVER_URL}/cart/fetchcart`,
                 {
                     headers: {
                         'Authorization': authToken
@@ -76,7 +76,7 @@ const Cart = () => {
         navigate('/login')
     };
     const getPreviousOrder = async () => {
-        const { data } = await axios.get(`${process.env.REACT_APP_GET_PREVIOUS_ORDER}`,
+        const { data } = await axios.get(`${process.env.REACT_APP_SERVER_URL}/getPreviousOrders`,
             {
                 headers: {
                     'Authorization': authToken
@@ -88,7 +88,7 @@ const Cart = () => {
     const removeFromCart = async (product) => {
         if (setProceed) {
             try {
-                const response = await axios.delete(`${process.env.REACT_APP_DELETE_CART}/${product._id}`, {
+                const response = await axios.delete(`${process.env.REACT_APP_SERVER_URL}/cart/deltecart/${product._id}`, {
                     headers: {
                         'Authorization': authToken
                     }

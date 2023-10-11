@@ -10,7 +10,7 @@ const UserCartItem = ({ commonGetRequest, id, authToken }) => {
 
     const removeCartItemByAdmin = async (product) => {
         try {
-            const { data } = await axios.delete(`${process.env.REACT_APP_ADMIN_DELETE_CART}/${product._id}`, {
+            const { data } = await axios.delete(`${process.env.REACT_APP_SERVER_URL}/admin/usercart/${product._id}`, {
                 headers: {
                     'Authorization': authToken
                 }
@@ -29,7 +29,7 @@ const UserCartItem = ({ commonGetRequest, id, authToken }) => {
         }
     }
     useEffect(() => {
-        commonGetRequest(process.env.REACT_APP_ADMIN_GET_CART, id, setUserCart);
+        commonGetRequest(`${process.env.REACT_APP_SERVER_URL}/admin/getcart`, id, setUserCart);
     }, [])
     return (
         <>

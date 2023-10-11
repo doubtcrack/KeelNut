@@ -29,61 +29,27 @@ const MobileNavigation = () => {
     }, [])
 
     return (
-        <Box className='showMobile' sx={{margin:'3%',}}>
-            <BottomNavigation sx={{ display: 'flex', justifyContent: 'space-between', width: '94%', position: 'fixed', borderRadius:'50px', bottom: 0, overflowX: 'hidden', height: 70, background: '#F5F5F5' }}>
-                <NavLink to='/' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
-                    <div className='links'>
-                        <TbSmartHome style={{ fontSize: 20, color:'#393939', }} />
-                    </div>
-                </NavLink>
-                <NavLink to='/wishlist' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}  >
-                    <div className='links' >
-                        <Badge badgeContent={setProceed ? wishlistData.length : 0} >
-                            <AiOutlineHeart style={{ fontSize: 20, color:'#393939', }} />
-                        </Badge>
-                    </div>
-                </NavLink>
-
-                <NavLink to='/cart' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', 
-}} >
-                    <div className='links'>
-                            <BsTools style={{ fontSize: 50, color:'#393939', background:'#35dbb6', borderRadius:'50px' , padding: '18px', boxShadow:' 4.8px 0px 7.6px rgba(0, 0, 0, 0.032),16.1px 0px 25.7px rgba(0, 0, 0, 0.048),72px 0px 115px rgba(0, 0, 0, 0.08)' }} />
-                    </div>
-                </NavLink>
-                
-                <NavLink to='/cart' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
-                    <div className='links'>
-                        <Badge badgeContent={setProceed ? cart.length : 0} >
-                            <BsHandbag style={{ fontSize: 20, color:'#393939' }} />
-                        </Badge>
-                    </div>
-                </NavLink>
-                
-             
-
-                {
-                    setProceed ?
-                        <>
-                            <NavLink to='/update' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
-                                <div className='links'>
-                                    <AiOutlineUser style={{ fontSize: 20, color:'#393939', }} />
-
-                                </div>
-                            </NavLink>
-                            {/* <div className='links' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => handleClickOpen(setOpenAlert)}>
-                                <FiLogOut style={{ fontSize: 20, color:'#393939', }} />
-
-                            </div> */}
-                        </>
-                        : <NavLink to='/login' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
-                            <div className='links'>
-                                <AiOutlineUser style={{ fontSize: 20, color:'#393939', }} />
-                            </div>
-                        </NavLink>
-                }
-
-            </BottomNavigation >
-            <Dialog
+        <Box className='showMobile' sx={{margin:'3%'}}>
+        <BottomNavigation sx={{ display: 'flex', justifyContent: 'space-between', width: '94%', position: 'fixed', borderRadius: '50px', bottom: 0, overflowX: 'hidden', height: 70, background: '#F5F5F5' }}>
+        {[
+            { to: '/', icon: <TbSmartHome style={{ fontSize: 20, color: '#393939' }} /> },
+            { to: '/wishlist', icon: <Badge badgeContent={setProceed ? wishlistData.length : 0}><AiOutlineHeart style={{ fontSize: 20, color: '#393939' }} /></Badge> },
+            { to: '/cart', icon: <BsTools style={{ fontSize: 50, color: '#393939', background: '#35dbb6', borderRadius: '50px', padding: '18px', boxShadow: '4.8px 0px 7.6px rgba(0, 0, 0, 0.032),16.1px 0px 25.7px rgba(0, 0, 0, 0.048),72px 0px 115px rgba(0, 0, 0, 0.08)' }} /> },
+            { to: '/cart', icon: <Badge badgeContent={setProceed ? cart.length : 0}><BsHandbag style={{ fontSize: 20, color: '#393939' }} /></Badge> },
+            ...(setProceed
+                ? [
+                    { to: '/update', icon: <AiOutlineUser style={{ fontSize: 20, color: '#393939' }} /> },
+                    // Add more items if needed
+                ]
+                : [{ to: '/login', icon: <AiOutlineUser style={{ fontSize: 20, color: '#393939' }} /> }]
+            )
+        ].map((item, index) => (
+            <NavLink key={index} to={item.to} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div className='links'>{item.icon}</div>
+            </NavLink>
+        ))}
+    </BottomNavigation>
+    <Dialog
                 open={openAlert}
                 TransitionComponent={Transition}
                 keepMounted
